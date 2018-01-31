@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> CSS with Vue</title>
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div id="app">
+        <div class="demo" @click="attachedRed = !attachedRed" :class="redClass"></div>
+        <div class="demo" @click="attachedBlue = !attachedBlue" :class="{'blue': attachedBlue}"></div>
+        <div class="demo" :class="[color, redClass]"></div>
+        <div class="demo" :style="{backgroundColor: color}"></div>
+        <div class="demo" :style="{'background-color': color}"></div>
+        <div class="demo" :style="myStyle"></div>
+        <div class="demo" :style="[myStyle, {height: width + 'px'}]"></div>
+        <hr>
+        <input type="text" v-model="color">
+        <input type="text" v-model="width">
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            attachedRed: false,
+            attachedBlue: false,
+            attachedGreen: false,
+            color: "green",
+            width: 100
+        },
+        computed: {
+            redClass: function(){
+                return {
+                    'red': this.attachedRed
+                }
+            }, 
+            myStyle: function(){
+                return { 
+                    backgroundColor: this.color, 
+                    width: this.width + 'px'
+                }
+            }
+        }
+    });
+</script>
+
+</html>
