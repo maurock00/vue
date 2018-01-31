@@ -1,0 +1,28 @@
+<script src="vue.js"></script>
+
+<div id="app">
+    <my-cmp></my-cmp>
+    <hr>
+    <my-cmp></my-cmp>
+</div>
+
+<script>
+
+Vue.component('my-cmp', { 
+    data: function() {
+        return { status: 'Crtitical' }
+    },
+    template: '<p> Server Status: {{ status }}  \
+               <button @click="changeStatus"> Change </button> </p>',
+    methods: { 
+        changeStatus: function() {
+            this.status = 'Normal';
+        }
+    }
+});
+
+new Vue({
+    el: '#app'
+})
+
+</script>

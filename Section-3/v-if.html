@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-if="show">You can see me <span> HELLO !</span></p>
+        <p v-else> Now You see me</p>
+        <p v-show="show"> You can also see me ?</p>
+        <template v-if="show">  
+            <p>Esto es parte de un template1</p>
+            <h1>Esto tambien</h1>
+        </template>
+        <button @click="show = !show"> Hide / Show</button>
+    </div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            show: true
+        }
+    });
+</script>
+</body>
+</html>
