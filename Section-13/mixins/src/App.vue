@@ -23,6 +23,20 @@
         data() { 
             return { 
                 textData: 'This is the law',
+                fruits: ['Apple', 'Banana', 'Mango', 'Lemon'],
+                filterText: ''
+            }
+        }, 
+        filters: { 
+            toUppercase(value) { 
+                return value.toUpperCase();
+            }
+        }, 
+        computed: { 
+            filteredFruits() { 
+                return this.fruits.filter( (element) => { 
+                    return element.match(this.filterText)
+                });
             }
         }, 
         components: { 

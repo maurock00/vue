@@ -9,21 +9,11 @@
 </template>
 
 <script>
+
+    import { fruitMixin } from './fruitMixin.js'
+
     export default {
-        data() { 
-            return { 
-                textData: 'This is the law',
-                fruits: ['Apple', 'Banana', 'Mango', 'Lemon'],
-                filterText: ''
-            }
-        }, 
-        computed: { 
-            filteredFruits() { 
-                return this.fruits.filter( (element) => { 
-                    return element.match(this.filterText)
-                });
-            }
-        }
+        mixins: ['fruitMixin']
     }
 </script>
 
