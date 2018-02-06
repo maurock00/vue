@@ -9,10 +9,13 @@
 </template>
 
 <script>
-    import { fruitMixin } from './fruitMixin.js'
+    import { fruitMixin } from './fruitMixin.js';
 
     export default {
-       mixins: [fruitMixin]
+       mixins: [fruitMixin],
+       created() { 
+           console.log('Inside list created method');
+       }
     }
 </script>
 
