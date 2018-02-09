@@ -1,0 +1,140 @@
+.text-center {
+    text-align: center;
+}
+
+.healthbar {
+    height: 40px;
+    background-color: #eee;
+    margin: auto;
+    transition: width 500ms;
+}
+
+.controls, .log {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 3px 6px #ccc;
+}
+
+.turn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.log ul {
+    list-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.log ul li {
+    margin: 5px;
+}
+
+.log ul .player-turn {
+    color: blue;
+    background-color: #e4e8ff;
+    margin: .5rem;
+}
+
+.log ul .monster-turn {
+    color: red;
+    background-color: #ffc0c1;
+    margin: .5rem;
+}
+
+button {
+    font-size: 20px;
+    background-color: #eee;
+    padding: 12px;
+    box-shadow: 0 1px 1px black;
+    margin: 10px;
+}
+
+#start-game {
+    background-color: #aaffb0;
+}
+
+#start-game:hover {
+    background-color: #76ff7e;
+}
+
+#attack {
+    background-color: #ff7367;
+}
+
+#attack:hover {
+    background-color: #ff3f43;
+}
+
+#special-attack {
+    background-color: #ffaf4f;
+}
+
+#special-attack:hover {
+    background-color: #ff9a2b;
+}
+
+#heal {
+    background-color: #aaffb0;
+}
+
+#heal:hover {
+    background-color: #76ff7e;
+}
+
+#give-up {
+    background-color: #ffffff;
+}
+
+#give-up:hover {
+    background-color: #c7c7c7;
+}
+
+/* Animations */
+
+.fade-enter { 
+    transform: translateX(-20px);
+}
+
+.fade-enter-active {
+    animation: fade-in 1s forwards;
+}
+
+@keyframes fade-in { 
+    from{ 
+        transform: translateX(-20px);
+    }
+    to { 
+        transform: translateX(0px);
+    }
+}
+
+.flip-enter-active { 
+    animation: flip-in 0.3s forwards;
+}
+
+.flip-leave-active {
+    animation: flip-out 0.3s forwards;
+}
+
+@keyframes flip-out { 
+    from { 
+        transform: rotateY(0deg);
+    }
+    to { 
+        transform: rotateY(90deg);
+    }
+}
+
+@keyframes flip-in { 
+    from {
+        transform: rotateY(90deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
