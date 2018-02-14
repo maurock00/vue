@@ -198,7 +198,7 @@
     position: absolute;
 }
 
-.slid-move { 
+.slide-move { 
     transition: transform 1s;
 }
 
