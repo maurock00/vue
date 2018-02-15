@@ -16,6 +16,11 @@ const router = new VueRouter({
   }
 });
 
+router.beforeEach( (to, from, next) => {
+    console.log('Global beforeEach'); 
+    next(); //Could contain a path, object that describes a path or false to abort
+ });
+
 new Vue({
   el: '#app',
   router,

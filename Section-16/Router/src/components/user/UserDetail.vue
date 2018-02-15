@@ -25,6 +25,15 @@ export default {
                 hash: '#data'
             }
         }
+    }, 
+    beforeRouteEnter(to, from, next){ 
+        if(true) {
+            next(); 
+        }
+        else { 
+            alert('Non autohorized user');
+            next(false); 
+        }
     }
 }
 </script>
