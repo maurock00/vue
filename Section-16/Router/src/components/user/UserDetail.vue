@@ -5,7 +5,7 @@
         <router-link 
             tag="button"
             class="btn btn-primary"
-            :to="{ name: 'editUser', params: { id: $route.params.id }, query: { locale: 'en', q: 100} }">
+            :to="link">
         Edit User
         </router-link>
     </div>
@@ -15,4 +15,16 @@
 <script>
 //Link could be on this way, but er are using name property of routes
 // :to="'/user/' + $route.params.id + '/edit' ">
+export default { 
+    data() { 
+        return { 
+            link: { 
+                name: 'editUser', 
+                params: { id: this.$route.params.id }, 
+                query: { locale: 'en', q: 100 }, 
+                hash: '#data'
+            }
+        }
+    }
+}
 </script>
