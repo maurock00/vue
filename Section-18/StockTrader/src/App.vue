@@ -3,7 +3,12 @@
     <app-header></app-header>
     <div class="row">
       <div class="col-xs-12">
-        <router-view></router-view>
+        <transition 
+          enter-active-class="animated bounce"
+          enter-leave-class="animated bounce"
+          appear>
+            <router-view></router-view>
+        </transition>
       </div>
     </div>
   </div>
@@ -17,7 +22,7 @@ export default {
     appHeader: Header
   }, 
   created() { 
-    this.$store.dispatch('initStocks')
+    this.$store.dispatch('initStocks');
   }
 }
 </script>
